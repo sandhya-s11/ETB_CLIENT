@@ -2,18 +2,18 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const Events = () => {
- 
+
   return (
     <div className="px-5 py-10">
-       <div className=" fixed top-0 left-0 bottom-1 w-full h-full bg-[url('https://wallpapercave.com/wp/wp7488230.jpg')]
+      <div className=" fixed top-0 left-0 bottom-1 w-full h-full bg-[url('https://wallpapercave.com/wp/wp7488230.jpg')]
   bg-cover bg-center  opacity-20  -z-10">
       </div>
-      
+
       <h1 className="text-3xl font-bold text-center mb-8">Our Events</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
-       
+
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
           <img
             className="w-full h-48 object-cover rounded-xl"
@@ -31,11 +31,11 @@ const Events = () => {
             onClick={() => handleBooking("Music Concert", 999)}
             className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"
           >
-            Book Now – ₹999
+          Login to Book Now
           </button>
         </div>
 
-        {/* Tech Conference */}
+
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
           <img
             className="w-full h-48 object-cover rounded-xl"
@@ -53,11 +53,11 @@ const Events = () => {
             onClick={() => handleBooking("Tech Conference", 1499)}
             className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"
           >
-            Book Now – ₹1499
+           Login to Book Now
           </button>
         </div>
 
-        {/* Stand-Up Comedy */}
+
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
           <img
             className="w-full h-48 object-cover rounded-xl"
@@ -75,11 +75,10 @@ const Events = () => {
             onClick={() => handleBooking("Stand-Up Comedy", 799)}
             className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"
           >
-            Book Now – ₹799
+            Login to Book Now
           </button>
         </div>
 
-        {/* Food Festival */}
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
           <img
             className="w-full h-48 object-cover rounded-xl"
@@ -97,29 +96,29 @@ const Events = () => {
             onClick={() => handleBooking("Food Festival", 499)}
             className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"
           >
-            Book Now – ₹499
+            Login to Book Now
           </button>
         </div>
 
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
-           <img 
-           className="w-full h-48 object-cover rounded-xl" 
-           src="https://d197irk3q85upd.cloudfront.net/catalog/product/e/x/exhibition_banner_1.jpg" 
-           alt="Art Exhibition" /> 
-           <p className="mt-3 border-2 border-blue-400 p-2 rounded-lg"> 
-            <strong>Art Exhibition</strong><br /> 
-            Explore stunning artworks and creativity from new talents across the city.<br /> 
+          <img
+            className="w-full h-48 object-cover rounded-xl"
+            src="https://d197irk3q85upd.cloudfront.net/catalog/product/e/x/exhibition_banner_1.jpg"
+            alt="Art Exhibition" />
+          <p className="mt-3 border-2 border-blue-400 p-2 rounded-lg">
+            <strong>Art Exhibition</strong><br />
+            Explore stunning artworks and creativity from new talents across the city.<br />
             <p className="px-4 items-start text-left"> Date: 5th Dec 2025 </p>
-             <p className="px-4 items-start text-left"> Time: 10:00 AM</p>
-              <p className="px-4 items-start text-left"> Venue: Art Gallery</p>
-               </p>
-                <button
-                 onClick={() => handleBooking("Art Gallery", 200)}
-                 className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"> 
-                   Book Now – ₹200</button> 
-                 </div>
+            <p className="px-4 items-start text-left"> Time: 10:00 AM</p>
+            <p className="px-4 items-start text-left"> Venue: Art Gallery</p>
+          </p>
+          <button
+            onClick={() => handleBooking("Art Gallery", 200)}
+            className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300">
+            Login to Book Now</button>
+        </div>
 
-        {/* Sports Championship */}
+        
         <div className="text-center p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300">
           <img
             className="w-full h-48 object-cover rounded-xl"
@@ -137,7 +136,7 @@ const Events = () => {
             onClick={() => handleBooking("Sports Championship", 1299)}
             className="mt-3 bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-300"
           >
-            Book Now – ₹1299
+            Login to Book Now
           </button>
         </div>
 

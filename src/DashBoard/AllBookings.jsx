@@ -1,0 +1,45 @@
+import { Table, Card } from "antd";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+const AllBookings = () => {
+  const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/api/bookings")
+      .then(res => setBookings(res.data));
+  }, []);
+
+  return (
+    <div
+      className="min-h-screen p-6 bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://wallpaperaccess.com/full/11122227.jpg')",
+      }}
+    >
+      <Card
+        style={{
+          borderRadius: 16,
+          boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
+        }}
+      >
+        <h2 style={{ marginBottom: 20 }}>All Bookings</h2>
+
+        <Table
+          rowKey="_id"
+          dataSource={bookings}
+          pagination={{ pageSize: 6 }}
+          columns={[
+            { title: "User", dataIndex: "userName" },
+            { title: "Event", dataIndex: "eventName" },
+            { title: "Tickets", dataIndex: "tickets" },
+            { title: "Amount (₹)", dataIndex: "totalAmount" },
+          ]}
+        />
+      </Card>
+    </div>
+  );
+};
+
+export default AllBookings;

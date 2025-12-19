@@ -12,17 +12,18 @@ const Login = () => {
         values
       );
 
-      // ✅ Store auth data properly
+      
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.role);
       localStorage.setItem("user", JSON.stringify(res.data.user));
+      localStorage.setItem("role", res.data.user.role);
 
       
-      if (res.data.role === "admin") {
+      if (res.data.user.role === "admin") {
         navigate("/admin/dashboard");
       } else {
         navigate("/user/dashboard");
       }
+
     } catch (error) {
       alert(error.response?.data?.message || "Login failed");
     }

@@ -49,7 +49,7 @@ const Signup = () => {
             <Input.Password placeholder="Enter password" />
           </Form.Item>
 
-          {/* New Age Field */}
+         
           <Form.Item
             label="Age"
             name="age"

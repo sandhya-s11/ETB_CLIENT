@@ -23,9 +23,9 @@ const handleAnimationComplete = () => {
       
       <div className="absolute inset-0 bg-opacity-40"></div>
 
-      {/* Content */}
+      
       <div className="relative z-10 flex items-center justify-between h-full px-8">
-        {/* Logo */}
+        
         <div className="flex grow items-center">
           <img
             src='./public/logo.png'  

@@ -23,7 +23,7 @@ const Home = () => {
           <p className="text-lg pt-4 text-gray-700 ">
             Book, Manage & Experience Events Seamlessly — A complete system for
             handling all your event ticketing needs across{" "}
-            <strong>6 unique events</strong>.
+            <strong>6+ unique events</strong>.
           </p>
 
           <p className="text-lg pt-4 pb-4 font-semibold text-pink-600">
@@ -37,7 +37,7 @@ const Home = () => {
             <li>▶ Secure login for users & admins</li>
             <li>▶ No hidden charges</li>
             <li>▶ Real-time ticket availability</li>
-            <li>▶ 6 event categories supported</li>
+            <li>▶ 6+ event categories supported</li>
           </ul>
 
           

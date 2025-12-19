@@ -72,21 +72,58 @@ const ManageEvents = () => {
       </Card>
 
       <Modal
-        title="Add Event"
-        open={open}
-        onOk={addEvent}
-        onCancel={() => setOpen(false)}
-      >
-        <Form layout="vertical" form={form}>
-          <Form.Item name="title" label="Title" required><Input /></Form.Item>
-          <Form.Item name="description" label="Description"><Input /></Form.Item>
-          <Form.Item name="date" label="Date"><Input /></Form.Item>
-          <Form.Item name="time" label="Time"><Input /></Form.Item>
-          <Form.Item name="venue" label="Venue"><Input /></Form.Item>
-          <Form.Item name="price" label="Price"><Input /></Form.Item>
-          <Form.Item name="image" label="Image URL"><Input /></Form.Item>
-        </Form>
-      </Modal>
+  title="Add Event"
+  open={open}
+  onOk={addEvent}
+  onCancel={() => setOpen(false)}
+>
+  <Form layout="vertical" form={form}>
+    <Form.Item
+      name="title"
+      label="Title"
+      rules={[{ required: true, message: "Title is required" }]}
+    >
+      <Input />
+    </Form.Item>
+
+    <Form.Item name="description" label="Description">
+      <Input />
+    </Form.Item>
+
+    <Form.Item
+      name="date"
+      label="Date"
+      rules={[{ required: true, message: "Date is required" }]}
+    >
+      <Input type="date" />
+    </Form.Item>
+
+    <Form.Item
+      name="time"
+      label="Time"
+      rules={[{ required: true, message: "Time is required" }]}
+    >
+      <Input type="time" />
+    </Form.Item>
+
+    <Form.Item
+      name="venue"
+      label="Venue"
+      rules={[{ required: true, message: "Venue is required" }]}
+    >
+      <Input />
+    </Form.Item>
+
+    <Form.Item name="price" label="Price">
+      <Input />
+    </Form.Item>
+
+    <Form.Item name="image" label="Image URL">
+      <Input />
+    </Form.Item>
+  </Form>
+</Modal>
+
     </div>
   );
 };

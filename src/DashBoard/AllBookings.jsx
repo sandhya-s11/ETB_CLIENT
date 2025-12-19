@@ -6,7 +6,7 @@ const AllBookings = () => {
   const [bookings, setBookings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/bookings")
+    axios.get("https://etb-server-bj5o.onrender.com/api/bookings")
       .then(res => setBookings(res.data));
   }, []);
 

@@ -25,7 +25,7 @@ const BookEvent = () => {
 
     const user = JSON.parse(localStorage.getItem("user"));
     try {
-      await axios.post("http://localhost:5000/api/bookings", {
+      await axios.post("https://etb-server-bj5o.onrender.com/api/bookings", {
         userName: user.name,
         userEmail: user.email,
         eventName: state.title ,

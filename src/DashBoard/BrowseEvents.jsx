@@ -73,7 +73,7 @@ const BrowseEvents = () => {
   
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/events")
+      .get("https://etb-server-bj5o.onrender.com/api/events")
       .then((res) => setDbEvents(res.data));
   }, []);
 

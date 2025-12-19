@@ -7,7 +7,7 @@ const Signup = () => {
 
   const onFinish = async (values) => {
     try {
-      await axios.post("http://localhost:5000/api/users/register", values);
+      await axios.post("https://etb-server-bj5o.onrender.com/api/users/register", values);
       alert("Signup successful! Please login.");
       navigate("/login");
     } catch (error) {

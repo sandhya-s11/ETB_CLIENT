@@ -23,9 +23,9 @@ const AdminHome = ({ setPage }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const eventsRes = await axios.get("http://localhost:5000/api/events");
-      const usersRes = await axios.get("http://localhost:5000/api/users");
-      const bookingsRes = await axios.get("http://localhost:5000/api/bookings");
+      const eventsRes = await axios.get("https://etb-server-bj5o.onrender.com/api/events");
+      const usersRes = await axios.get("https://etb-server-bj5o.onrender.com/api/users");
+      const bookingsRes = await axios.get("https://etb-server-bj5o.onrender.com/api/bookings");
 
       const revenue = bookingsRes.data.reduce(
         (sum, b) => sum + b.totalAmount,

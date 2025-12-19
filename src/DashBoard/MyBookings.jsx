@@ -10,7 +10,7 @@ const MyBookings = () => {
     if (!user?.email) return;
 
     axios
-      .get(`http://localhost:5000/api/bookings/user/${user.email}`)
+      .get(`https://etb-server-bj5o.onrender.com/api/bookings/user/${user.email}`)
       .then((res) => setBookings(res.data))
       .catch((err) => console.error("Error fetching bookings:", err));
   }, []);

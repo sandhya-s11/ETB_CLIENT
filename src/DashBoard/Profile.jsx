@@ -24,7 +24,7 @@ const Profile = () => {
   };
 
   const handleSave = () => {
-    // SAVE ONLY EXTRA PROFILE DETAILS
+   
     const profileToSave = {
       phone: profile.phone,
       gender: profile.gender,

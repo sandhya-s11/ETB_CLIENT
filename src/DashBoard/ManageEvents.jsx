@@ -8,7 +8,7 @@ const ManageEvents = () => {
   const [form] = Form.useForm();
 
   const loadEvents = async () => {
-    const res = await axios.get("http://localhost:5000/api/events");
+    const res = await axios.get("https://etb-server-bj5o.onrender.com/api/events");
     setEvents(res.data);
   };
 
@@ -17,14 +17,14 @@ const ManageEvents = () => {
   }, []);
 
   const addEvent = async () => {
-    await axios.post("http://localhost:5000/api/events", form.getFieldsValue());
+    await axios.post("https://etb-server-bj5o.onrender.com/api/events", form.getFieldsValue());
     form.resetFields();
     setOpen(false);
     loadEvents();
   };
 
   const deleteEvent = async (id) => {
-    await axios.delete(`http://localhost:5000/api/events/${id}`);
+    await axios.delete(`https://etb-server-bj5o.onrender.com/api/events/${id}`);
     loadEvents();
   };
 

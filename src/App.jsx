@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
+  useLocation,
 } from "react-router-dom";
 
 import Header from "./Components/Header";
@@ -13,14 +13,16 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
+import Events from "./Pages/Events";
 import Signup from "./Pages/Signup";
-import Events from "./Pages/Events"; // ✅ ADD THIS
 
 // User Dashboard
 import UserDashBoard from "./DashBoard/UserDashBoard";
 import DashBoardHome from "./DashBoard/DashBoardHome";
-import UserEvents from "./DashBoard/UserEvents";     // ✅ ADD
-import UserBookings from "./DashBoard/UserBookings"; // ✅ ADD
+import BookEvent from "./DashBoard/BookEvent";
+import BrowseEvents from "./DashBoard/BrowseEvents";
+import MyBookings from "./DashBoard/MyBookings";
+import Profile from "./DashBoard/Profile";
 
 // Admin Dashboard
 import AdminDashboard from "./DashBoard/AdminDashboard";
@@ -39,19 +41,21 @@ const Layout = () => {
       {!hideLayout && <Header />}
 
       <Routes>
-        {/* Public Pages */}
+        {/* Public routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/events" element={<Events />} /> {/* ✅ FIX */}
+        <Route path="/events" element={<Events />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
 
-        {/* User Dashboard */}
+        {/* User Dashboard (NESTED ROUTES) */}
         <Route path="/user/dashboard" element={<UserDashBoard />}>
           <Route index element={<DashBoardHome />} />
-          <Route path="events" element={<UserEvents />} />     {/* ✅ FIX */}
-          <Route path="bookings" element={<UserBookings />} /> {/* ✅ FIX */}
+          <Route path="events" element={<BrowseEvents />} />
+          <Route path="book/:id" element={<BookEvent />} />
+          <Route path="bookings" element={<MyBookings />} />
+          <Route path="profile" element={<Profile />} />
         </Route>
 
         {/* Admin Dashboard */}

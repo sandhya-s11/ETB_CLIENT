@@ -1,5 +1,5 @@
 import { Layout, Button } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminSidebar from "./AdminSidebar";
 import AdminHome from "./AdminHome";
@@ -12,6 +12,14 @@ const { Header, Content } = Layout;
 const AdminDashboard = () => {
   const [page, setPage] = useState("home");
   const navigate = useNavigate();
+
+  // ✅ Logic fix: only allow admin role
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+    if (role !== "admin") {
+      navigate("/login"); // redirect non-admins
+    }
+  }, [navigate]);
 
   const renderPage = () => {
     switch (page) {
@@ -28,7 +36,7 @@ const AdminDashboard = () => {
 
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/");
+    navigate("/login"); // redirect to login after logout
   };
 
   return (

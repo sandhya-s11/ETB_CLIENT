@@ -12,11 +12,16 @@ const Login = () => {
         values
       );
 
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
-      localStorage.setItem("role", res.data.user.role);
+      const { user, token } = res.data;
 
-      if (res.data.user.role === "admin") {
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("role", user.role);
+
+      console.log("Login response:", user); // debug role
+
+      // Redirect based on role
+      if (user.role === "admin") {
         navigate("/admin/dashboard");
       } else {
         navigate("/user/dashboard");
@@ -64,10 +69,7 @@ const Login = () => {
                 { type: "email", message: "Enter valid email" },
               ]}
             >
-              <Input
-                placeholder="type your email address"
-                size="large"
-              />
+              <Input placeholder="type your email address" size="large" />
             </Form.Item>
 
             <Form.Item
@@ -75,10 +77,7 @@ const Login = () => {
               name="password"
               rules={[{ required: true, message: "Please enter password" }]}
             >
-              <Input.Password
-                placeholder="type password"
-                size="large"
-              />
+              <Input.Password placeholder="type password" size="large" />
             </Form.Item>
 
             <div className="flex justify-between items-center mb-4">
@@ -87,12 +86,7 @@ const Login = () => {
               </span>
             </div>
 
-            <Button
-              type="primary"
-              htmlType="submit"
-              size="large"
-              className="w-full rounded-full"
-            >
+            <Button type="primary" htmlType="submit" size="large" className="w-full rounded-full">
               Login
             </Button>
 
@@ -105,10 +99,6 @@ const Login = () => {
                 Create an Account
               </span>
             </p>
-
-           
-
-           
           </Form>
         </div>
       </div>
